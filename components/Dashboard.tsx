@@ -391,7 +391,7 @@ export default function Dashboard() {
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart
                       data={monthlyData}
-                      onClick={(e) => e?.stopPropagation?.()}
+                      
                     >
                       <defs>
                         <linearGradient id="colorTotal" x1="0" y1="0" x2="0" y2="1">
@@ -464,7 +464,8 @@ export default function Dashboard() {
                       <Tooltip 
                         contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '8px', color: '#fff' }}
                         itemStyle={{ color: '#e4e4e7' }}
-                        formatter={(value: number) => `₹${value.toLocaleString()}`}
+                        formatter={(value) => `₹${(value ?? 0).toLocaleString()}`}
+
                       />
                     </PieChart>
                   </ResponsiveContainer>
